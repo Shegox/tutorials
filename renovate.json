@@ -5,20 +5,7 @@
 		"github>ui5/renovate-config:lts#v1.2.1"
 	],
 	"ignorePresets": [":ignoreModulesAndTests", ":pinDevDependencies"],
-	"ignoreDeps": ["node", "npm", "@types/qunit", "@openui5/types"],
-	"customManagers": [
-    {
-      "customType": "regex",
-      "managerFilePatterns": [
-        "**/package.json"
-      ],
-      "matchStrings": [
-        "\"@openui5/types\":\\s*\"(?<currentValue>[\\d.]+)\""
-      ],
-      "depNameTemplate": "openui5_types",
-      "datasourceTemplate": "custom.openui5_lts"
-    }
-  ],
+	"ignoreDeps": ["node", "npm", "@types/qunit"],
 	"minimumReleaseAge": "3 days",
 	"rangeStrategy": "replace",
 	"prCreation": "immediate",
@@ -70,6 +57,11 @@
 			"schedule": [
 				"* 8-16 * * 1"
 			]
-		}
+		},
+    {
+    "matchPackageNames": ["@openui5/types"],
+    "overrideDatasource": "custom.openui5_lts",
+    "overrideDepName": "openui5_types"
+    }
 	]
 }
