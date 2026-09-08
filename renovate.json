@@ -46,8 +46,15 @@
 		},
 		{
 			"matchDepNames": [
+				"@openui5/types"
+			],
+			"overrideDatasource": "custom.openui5_lts",
+			"overridePackageName": "openui5_types"
+		},
+		{
+			"matchDepNames": [
 				"openui5_lts",
-				"openui5_types"
+				"@openui5/types"
 			],
 			"automerge": false,
 			"groupName": "openui5",
@@ -57,12 +64,6 @@
 			"schedule": [
 				"* 8-16 * * 1"
 			]
-		},
-    {
-    "matchPackageNames": ["@openui5/types"],
-    "overrideDatasource": "custom.openui5_lts",
-    "overridePackageName": "openui5_types",
-    "automerge": false
-    }
+		}
 	]
 }
